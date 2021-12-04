@@ -1,0 +1,26 @@
+{
+    "homepage": "https://www.sockscap64.com/homepage/",
+    "description": "SocksCap64, developed by Taro. It’s designed to reduce delays of cross-regional online game. It can also  assist you to speed up of the network through the socks proxy server, reduce ping of online games. SocksCap64 currently support the SOCKS 4/SOCKS 5/HTTP/Shadowsocks protocols, supports TCP and UDP.",
+    "version": "4.7",
+    "license": "Freeware",
+    "url": "http://127.0.0.1:9999/G%3A/App/Windows/Scoop/SocksCap64-setup-4.7.exe",
+    "hash": "8701fe1c223707f47c635516cc8b00b1e983d00bbe84b4bfbcf4c3e227f2257f",
+    "extract_dir": "SocksCap64-4.7",
+    "shortcuts": [
+        [
+            "SocksCap64_RunAsAdmin.exe",
+            "SocksCap64"
+        ]
+    ],
+    "persist": [
+        "config",
+        "proxy"
+    ],
+    "checkver": {
+        "github": "https://github.com/bobo2334/sockscap64"
+    },
+    "autoupdate": {
+        "url": "http://127.0.0.1:9999/G%3A/App/Windows/Scoop/SocksCap64-setup-4.7.exe",
+        "extract_dir": "SocksCap64-$version"
+    }
+}
