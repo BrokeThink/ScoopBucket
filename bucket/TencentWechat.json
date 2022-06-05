@@ -1,0 +1,18 @@
+{
+    "homepage": "https://weixin.qq.com/",
+    "description": "Wechat by Tencent",
+    "license": "Commercial",
+    "version": "3.7.0",
+    "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe",
+    "hash": "f9061a7a57d15880bb3606c14a0786418a094daaedf92d413612f11aea4b5c8e",
+    "installer": {
+        "script": "Start-Process -FilePath \"$dir\\$fname\" -Verb RunAs | Wait-Process"
+    },
+    "checkver": {
+        "url": "https://pc.weixin.qq.com/",
+        "regex": "<span class=\"download-version\">([\\d.]+)<"
+    },
+    "autoupdate": {
+        "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe"
+    }
+}
