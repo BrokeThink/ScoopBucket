@@ -4,7 +4,7 @@
     "license": "Commercial",
     "version": "3.7.0",
     "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe",
-    "hash": "f9061a7a57d15880bb3606c14a0786418a094daaedf92d413612f11aea4b5c8e",
+    "hash": "cf0384d18deae4a88a6324560c91e6a65bb187b8a6406a681f0fb54ec2812a9c",
     "installer": {
         "script": "Start-Process -FilePath \"$dir\\$fname\" -Verb RunAs | Wait-Process"
     },
