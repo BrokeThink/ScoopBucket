@@ -1,0 +1,36 @@
+{
+    "version": "4.0.8",
+    "homepage": "https://work.weixin.qq.com/",
+    "description": "Connection Makes a Smarter Business",
+    "license": {
+        "identifier": "EULA",
+        "url": "https://work.weixin.qq.com/nl/eula"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://work.weixin.qq.com/wework_admin/commdownload?platform=win&from=wwindex#/dl.7z",
+            "hash": "2c86563854a7fc752a4d2cd4943f64589d32fe03bd50e99db8b28c8289a33112"
+        }
+    },
+    "shortcuts": [
+        [
+            "WXWork.exe",
+            "WeChat Work"
+        ]
+    ],
+    "post_install": [
+        "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse",
+        "Remove-Item \"$dir\\Uninstall.exe\" -Force -Recurse"
+    ],
+    "checkver": {
+        "url": "https://work.weixin.qq.com",
+        "regex": "企业微信 ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://work.weixin.qq.com/wework_admin/commdownload?platform=win&from=wwindex#/dl.7z"
+            }
+        }
+    }
+}
