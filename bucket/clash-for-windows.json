@@ -7,7 +7,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.20.5/Clash.for.Windows.Setup.0.20.5.exe#/dl.7z",
-            "hash": "ce9ed981e3c867f0f708a621ff64687d29a1f84c8bec2dc018e6ae14d133bb18",
+            "hash": "9c0e72d1838ce16f7ccce14e6600e1f9e17f8284666cb12a0f70b2608affb9bf",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
                 "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse"
