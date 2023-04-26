@@ -1,15 +1,15 @@
 {
+    "version": "17.0.2-21581411",
     "homepage": "https://www.vmware.com/products/workstation-pro.html",
-    "version": "16.1.0.17198959",
-    "description": "VMWare. Industry standard for running multiple operating systems as virtual machines (VMs) on a single PC.",
+    "description": "VMware Workstation $version Pro for Windows. This Workstation product installation includes VMware Tools for Windows 64-bit operating systems",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/downloads/eula/universal_eula.pdf"
     },
     "architecture": {
         "64bit": {
-            "url": "https://download3.vmware.com/software/wkst/file/VMware-workstation-full-16.1.0-17198959.exe#/cosi.exe",
-            "hash": "342e92eed1ed1b90b11eda462d5bfc40252cdfdd247112be00fba51d4f8f7525",
+            "url": "https://download3.vmware.com/software/WKST-1702-WIN/VMware-workstation-full-17.0.2-21581411.exe#/cosi.exe",
+            "hash": "ab925cf5b7424b8f28bf65a5c388ce6f680dfeb157612ee6d6c3dd0a63100a40",
             "installer": {
                 "args": [
                     "/s",
@@ -53,15 +53,17 @@
     },
     "checkver": {
         "url": "https://chocolatey.org/packages/vmwareworkstation",
-        "regex": "Downloads of v\\s+([\\d.]+)"
+        "regex": "(?<major>\\d+).(?<minor>\\d+).(?<patch>\\d+).(?<flag>\\d+)",
+        "replace": "${major}.${minor}.${patch}-${flag}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download3.vmware.com/software/wkst/file/VMware-workstation-full-$version.exe#/cosi.exe",
+                "url": "https://download3.vmware.com/software/WKST-$matchMajor$matchMinor$matchPatch-WIN/VMware-workstation-full-$version.exe#/cosi.exe",
                 "hash": {
-                    "url": "https://my.vmware.com/web/vmware/details?downloadGroup=WKST-$majorVersion$minorVersion$patchVersion-WIN&productId=686",
-                    "regex": "(?sm)$basename.*?SHA256SUM</span>:\\s+$sha256"
+                    "url": "https://customerconnect.vmware.com/channel/public/api/v1.0/dlg/details?locale=cn_CN&downloadGroup=WKST-$matchMajor$matchMinor$matchPatch-WIN&productId=1038",
+                    "mode": "json",
+                    "jsonpath": "$.downloadFiles[0].sha256checksum"
                 }
             }
         }
